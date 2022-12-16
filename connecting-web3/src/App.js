@@ -1,22 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bulma/css/bulma.min.css';
 
 function App() {
+
+  async function requestAccount(){
+
+    if(window.ethereum){
+      console.log('detected')
+    }
+    else{
+      console.log('metamask not detected')
+    }
+
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <button
+        class="button is-large is-info"
+        onClick={requestAccount}
+      >
+        Connect wallet!
+      </button>
+
+
       </header>
     </div>
   );
